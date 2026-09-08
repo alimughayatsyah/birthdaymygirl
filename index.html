@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, My Girl ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fdf5f7;
+    color:#5b3d47;
+    font-family:'DM Sans',sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+   OPENING
+========================= */
+
+.opening{
+    position:fixed;
+    inset:0;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+        radial-gradient(circle at 50% 40%, #ffe4ec 0%, #fbd5e0 35%, #f7c7d5 100%);
+    transition:opacity 1.2s ease, visibility 1.2s ease;
+}
+
+.opening.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.opening-content{
+    padding:30px;
+    animation:openingFloat 3s ease-in-out infinite;
+}
+
+.opening-small{
+    font-size:11px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:#9a6677;
+    margin-bottom:20px;
+}
+
+.opening h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(55px,12vw,105px);
+    font-weight:400;
+    line-height:.85;
+    color:#704654;
+}
+
+.opening h1 span{
+    display:block;
+    font-style:italic;
+}
+
+.open-button{
+    margin-top:42px;
+    padding:15px 34px;
+    border:1px solid rgba(112,70,84,.35);
+    border-radius:100px;
+    background:rgba(255,255,255,.35);
+    backdrop-filter:blur(12px);
+    color:#704654;
+    font-family:'DM Sans',sans-serif;
+    font-size:12px;
+    letter-spacing:3px;
+    cursor:pointer;
+    transition:.4s ease;
+}
+
+.open-button:hover{
+    background:#fff;
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(100,50,70,.15);
+}
+
+@keyframes openingFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:18px;
+    opacity:0;
+    pointer-events:none;
+    animation:floatHeart 7s linear forwards;
+    z-index:3;
+}
+
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0) scale(.6) rotate(0);
+        opacity:0;
+    }
+    15%{
+        opacity:.55;
+    }
+    100%{
+        transform:translateY(-110vh) scale(1.2) rotate(25deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-btn{
+    position:fixed;
+    right:20px;
+    top:20px;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:1px solid rgba(112,70,84,.2);
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(15px);
+    color:#704654;
+    z-index:100;
+    cursor:pointer;
+    font-size:17px;
+    box-shadow:0 8px 25px rgba(90,40,60,.08);
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    min-height:100vh;
+    padding:100px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.container{
+    width:100%;
+    max-width:1050px;
+    margin:auto;
+}
+
+.serif{
+    font-family:'Cormorant Garamond',serif;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1.2s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    background:
+        radial-gradient(circle at 50% 40%,#ffdce7,transparent 35%),
+        #fdf5f7;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.small{
+    font-size:11px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#a06d7d;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(65px,12vw,135px);
+    line-height:.82;
+    font-weight:400;
+    color:#704654;
+}
+
+.hero h1 span{
+    display:block;
+    font-style:italic;
+}
+
+.hero p{
+    max-width:550px;
+    margin:35px auto 0;
+    color:#96707c;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    background:#f8e8ed;
+    text-align:center;
+}
+
+.intro h2{
+    font-size:clamp(48px,8vw,85px);
+    line-height:.9;
+    font-weight:400;
+    color:#704654;
+}
+
+.intro p{
+    max-width:650px;
+    margin:35px auto 0;
+    line-height:1.9;
+    color:#8e6875;
+    font-size:15px;
+}
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-section{
+    background:#fdf5f7;
+}
+
+.photo{
+    max-width:720px;
+    margin:auto;
+    position:relative;
+}
+
+.photo img{
+    width:100%;
+    display:block;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:4px;
+    box-shadow:0 25px 70px rgba(100,50,70,.16);
+    animation:photoFloat 6s ease-in-out infinite;
+}
+
+@keyframes photoFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
+
+.photo-caption{
+    display:flex;
+    justify-content:space-between;
+    margin-top:22px;
+    font-size:10px;
+    letter-spacing:3px;
+    color:#a47784;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    background:#f9e9ee;
+}
+
+.gallery-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.gallery h2{
+    font-size:clamp(50px,8vw,80px);
+    font-weight:400;
+    line-height:.9;
+    color:#704654;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.gallery-card{
+    overflow:hidden;
+    border-radius:3px;
+    box-shadow:0 15px 40px rgba(100,50,70,.1);
+}
+
+.gallery-card img{
+    width:100%;
+    height:430px;
+    display:block;
+    object-fit:cover;
+    transition:1s ease;
+}
+
+.gallery-card:hover img{
+    transform:scale(1.05);
+}
+
+.gallery-card:nth-child(2){
+    margin-top:70px;
+}
+
+.gallery-card:nth-child(3){
+    margin-top:-40px;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter{
+    background:#fdf5f7;
+}
+
+.letter-card{
+    max-width:720px;
+    margin:auto;
+}
+
+.letter-label{
+    font-size:10px;
+    letter-spacing:4px;
+    color:#a47784;
+    margin-bottom:30px;
+}
+
+.letter h2{
+    font-size:clamp(55px,8vw,80px);
+    font-weight:400;
+    color:#704654;
+    margin-bottom:45px;
+}
+
+.letter p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(23px,3vw,29px);
+    line-height:1.55;
+    color:#694953;
+}
+
+.signature{
+    margin-top:45px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    font-style:italic;
+    color:#704654;
+}
+
+/* =========================
+   AGE
+========================= */
+
+.age{
+    text-align:center;
+    background:
+        radial-gradient(circle at 50% 45%,#ffdce7,transparent 35%),
+        #f8e8ed;
+}
+
+.age-label{
+    font-size:11px;
+    letter-spacing:6px;
+    color:#a06d7d;
+}
+
+.age-number{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(170px,32vw,350px);
+    line-height:.72;
+    font-weight:400;
+    color:#704654;
+    text-shadow:0 20px 50px rgba(100,50,70,.12);
+}
+
+.age-text{
+    margin-top:45px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    color:#805866;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    min-height:100vh;
+    text-align:center;
+    background:#704654;
+    color:white;
+}
+
+.final .small{
+    color:#f2cbd6;
+}
+
+.final h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(60px,10vw,115px);
+    line-height:.85;
+    font-weight:400;
+}
+
+.final h2 span{
+    font-style:italic;
+}
+
+.final p{
+    margin-top:35px;
+    color:#edcbd5;
+    font-size:14px;
+}
+
+.final-heart{
+    margin-top:45px;
+    font-size:28px;
+    animation:pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.25)}
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    section{
+        padding:80px 22px;
+    }
+
+    .opening h1{
+        font-size:65px;
+    }
+
+    .hero h1{
+        font-size:70px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-card,
+    .gallery-card:nth-child(2),
+    .gallery-card:nth-child(3){
+        margin:0;
+    }
+
+    .gallery-card img{
+        height:420px;
+    }
+
+    .letter p{
+        font-size:24px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- OPENING -->
+
+<div class="opening" id="opening">
+
+```
+<div class="opening-content">
+
+    <div class="opening-small">
+        A little surprise for you
+    </div>
+
+    <h1>
+        Happy Birthday,
+        <span>My Girl.</span>
+    </h1>
+
+    <button class="open-button" onclick="openGift()">
+        CLICK TO OPEN ♡
+    </button>
+
+</div>
+```
+
+</div>
+
+<!-- MUSIC -->
+
+<button class="music-btn" id="musicButton" onclick="toggleMusic()">
+    ♫
+</button>
+
+<audio id="music" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HERO -->
+
+<section class="hero">
+
+```
+<div class="hero-content fade">
+
+    <div class="small">
+        September • A special day
+    </div>
+
+    <h1>
+        Happy Birthday,
+        <span>My Girl.</span>
+    </h1>
+
+    <p>
+        Today isn't just another day.
+        It's a little celebration of someone
+        who means so much to me.
+    </p>
+
+</div>
+```
+
+</section>
+
+<!-- INTRO -->
+
+<section class="intro">
+
+```
+<div class="container fade">
+
+    <div class="small">
+        Chapter 25
+    </div>
+
+    <h2 class="serif">
+        25 looks<br>
+        beautiful on you.
+    </h2>
+
+    <p>
+        Semoga perjalanan di usia baru ini
+        membawa lebih banyak kebahagiaan,
+        ketenangan, keberanian,
+        dan hal-hal indah yang kamu impikan.
+    </p>
+
+</div>
+```
+
+</section>
+
+<!-- MAIN PHOTO -->
+
+<section class="photo-section">
+
+```
+<div class="container fade">
+
+    <div class="photo">
+
+        <img src="foto1.jpg" alt="Our favorite memory">
+
+        <div class="photo-caption">
+            <span>ONE OF MY FAVORITE MEMORIES</span>
+            <span>♡</span>
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery">
+
+```
+<div class="container">
+
+    <div class="gallery-title fade">
+
+        <div class="small">
+            Little memories
+        </div>
+
+        <h2 class="serif">
+            Moments I want<br>
+            to remember.
+        </h2>
+
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-card fade">
+            <img src="foto2.jpg" alt="Memory">
+        </div>
+
+        <div class="gallery-card fade">
+            <img src="foto3.jpg" alt="Memory">
+        </div>
+
+        <div class="gallery-card fade">
+            <img src="foto4.jpg" alt="Memory">
+        </div>
+
+        <div class="gallery-card fade">
+            <img src="foto5.jpg" alt="Memory">
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- LETTER -->
+
+<section class="letter">
+
+```
+<div class="container">
+
+    <div class="letter-card fade">
+
+        <div class="letter-label">
+            A LETTER FOR YOU
+        </div>
+
+        <h2 class="serif">
+            Dear Sayangku,
+        </h2>
+
+        <p>
+            Happy birthday to the person who has brought
+            so many colors into my life.
+            <br><br>
+            Aku mungkin tidak selalu pandai mengungkapkan
+            semuanya dengan kata-kata, tapi aku ingin kamu tahu
+            bahwa keberadaan sayang sangat berarti bagi aku.
+            <br><br>
+            Semoga di usia 25 ini sayang mendapatkan
+            lebih banyak alasan untuk tersenyum,
+            lebih banyak hal untuk dibanggakan,
+            dan lebih banyak mimpi yang menjadi nyata.
+            <br><br>
+            And whatever happens next, I hope we get to make
+            many more memories together.
+        </p>
+
+        <div class="signature">
+            With love,<br>
+            Ali ♡
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- AGE -->
+
+<section class="age">
+
+```
+<div class="container fade">
+
+    <div class="age-label">
+        WELCOME TO
+    </div>
+
+    <div class="age-number">
+        25
+    </div>
+
+    <div class="age-text">
+        May this chapter be your most beautiful one yet.
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- FINAL -->
+
+<section class="final">
+
+```
+<div class="container fade">
+
+    <div class="small">
+        One last thing
+    </div>
+
+    <h2>
+        Happy Birthday,<br>
+        <span>My Girl.</span>
+    </h2>
+
+    <p>
+        Thank you for being part of my story.
+    </p>
+
+    <div class="final-heart">
+        ♡
+    </div>
+
+</div>
+```
+
+</section>
+
+<script>
+
+/* =========================
+   OPEN WEBSITE + MUSIC
+========================= */
+
+const music = document.getElementById("music");
+const opening = document.getElementById("opening");
+const musicButton = document.getElementById("musicButton");
+
+function openGift(){
+
+    opening.classList.add("hide");
+
+    /*
+    Musik diputar ketika tombol ditekan.
+    Ini lebih kompatibel dengan browser HP
+    dibanding autoplay tanpa interaksi.
+    */
+
+    music.play().then(()=>{
+
+        musicButton.innerHTML = "❚❚";
+
+    }).catch(()=>{
+
+        musicButton.innerHTML = "♫";
+
+    });
+
+    startHearts();
+
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play();
+
+        musicButton.innerHTML = "❚❚";
+
+    }else{
+
+        music.pause();
+
+        musicButton.innerHTML = "♫";
+
+    }
+
+}
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+const observer = new IntersectionObserver(
+
+    (entries)=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+document.querySelectorAll(".fade").forEach(el=>{
+    observer.observe(el);
+});
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = Math.random() > .5 ? "♡" : "♥";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (12 + Math.random() * 15) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
+
+}
+
+function startHearts(){
+
+    setInterval(createHeart,900);
+
+}
+
+</script>
+
+</body>
+</html>
