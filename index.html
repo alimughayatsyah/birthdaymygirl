@@ -2,15 +2,22 @@
 
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday, My Girl ♡</title>
+
+<title>Happy Birthday, My Girl 🌻</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -23,482 +30,1243 @@ html{
 }
 
 body{
-    background:#fdf5f7;
-    color:#5b3d47;
+
+    background:#fff8ef;
+
+    color:#5c4634;
+
     font-family:'DM Sans',sans-serif;
+
     overflow-x:hidden;
+
 }
 
-/* =========================
+img{
+
+    max-width:100%;
+
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root{
+
+    --cream:#fff8ef;
+
+    --cream2:#fff1d9;
+
+    --soft:#f7dfb8;
+
+    --gold:#d9a441;
+
+    --gold2:#bd8120;
+
+    --brown:#654831;
+
+    --brown2:#8a6848;
+
+    --green:#75845b;
+
+}
+
+
+/* =========================================================
    OPENING
-========================= */
+========================================================= */
 
 .opening{
+
     position:fixed;
+
     inset:0;
-    z-index:999;
+
+    z-index:9999;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
+
+    overflow:hidden;
+
     background:
-        radial-gradient(circle at 50% 40%, #ffe4ec 0%, #fbd5e0 35%, #f7c7d5 100%);
-    transition:opacity 1.2s ease, visibility 1.2s ease;
+
+        radial-gradient(
+            circle at 50% 45%,
+            #fff1cf 0%,
+            #f8dfad 38%,
+            #eac47c 100%
+        );
+
+    transition:
+
+        opacity 1.4s ease,
+        visibility 1.4s ease;
+
 }
+
 
 .opening.hide{
+
     opacity:0;
+
     visibility:hidden;
+
     pointer-events:none;
+
 }
+
 
 .opening-content{
+
+    position:relative;
+
+    z-index:5;
+
     padding:30px;
-    animation:openingFloat 3s ease-in-out infinite;
+
+    animation:openingFloat 4s ease-in-out infinite;
+
 }
+
 
 .opening-small{
-    font-size:11px;
+
+    font-size:10px;
+
     letter-spacing:5px;
+
     text-transform:uppercase;
-    color:#9a6677;
-    margin-bottom:20px;
+
+    color:#927044;
+
+    margin-bottom:22px;
+
 }
+
 
 .opening h1{
+
     font-family:'Cormorant Garamond',serif;
-    font-size:clamp(55px,12vw,105px);
+
+    font-size:clamp(60px,13vw,125px);
+
+    line-height:.78;
+
     font-weight:400;
-    line-height:.85;
-    color:#704654;
+
+    color:#68462c;
+
 }
+
 
 .opening h1 span{
+
     display:block;
+
     font-style:italic;
+
 }
+
 
 .open-button{
-    margin-top:42px;
-    padding:15px 34px;
-    border:1px solid rgba(112,70,84,.35);
+
+    margin-top:48px;
+
+    padding:17px 38px;
+
     border-radius:100px;
+
+    border:1px solid rgba(104,70,44,.3);
+
     background:rgba(255,255,255,.35);
-    backdrop-filter:blur(12px);
-    color:#704654;
-    font-family:'DM Sans',sans-serif;
-    font-size:12px;
+
+    backdrop-filter:blur(15px);
+
+    color:#68462c;
+
+    font-size:11px;
+
     letter-spacing:3px;
+
     cursor:pointer;
-    transition:.4s ease;
+
+    transition:.5s ease;
+
 }
+
 
 .open-button:hover{
+
+    transform:translateY(-4px);
+
     background:#fff;
-    transform:translateY(-3px);
-    box-shadow:0 15px 35px rgba(100,50,70,.15);
+
+    box-shadow:
+        0 20px 45px rgba(100,60,20,.15);
+
 }
+
+
+.opening-note{
+
+    margin-top:18px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:18px;
+
+    color:#876844;
+
+}
+
 
 @keyframes openingFloat{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-8px)}
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
 }
 
-/* =========================
-   FLOATING HEARTS
-========================= */
 
-.heart{
-    position:fixed;
-    bottom:-30px;
-    font-size:18px;
-    opacity:0;
-    pointer-events:none;
-    animation:floatHeart 7s linear forwards;
-    z-index:3;
+/* =========================================================
+   SUNFLOWER DECORATION
+========================================================= */
+
+.sunflower{
+
+    position:absolute;
+
+    font-size:80px;
+
+    opacity:.18;
+
+    animation:sunflowerFloat 7s ease-in-out infinite;
+
 }
 
-@keyframes floatHeart{
-    0%{
-        transform:translateY(0) scale(.6) rotate(0);
-        opacity:0;
-    }
-    15%{
-        opacity:.55;
-    }
-    100%{
-        transform:translateY(-110vh) scale(1.2) rotate(25deg);
-        opacity:0;
-    }
+
+.sunflower.one{
+
+    top:8%;
+
+    left:5%;
+
+    transform:rotate(-15deg);
+
 }
 
-/* =========================
+
+.sunflower.two{
+
+    bottom:7%;
+
+    right:6%;
+
+    font-size:110px;
+
+    transform:rotate(20deg);
+
+    animation-delay:2s;
+
+}
+
+
+.sunflower.three{
+
+    top:15%;
+
+    right:12%;
+
+    font-size:45px;
+
+    animation-delay:1s;
+
+}
+
+
+@keyframes sunflowerFloat{
+
+    0%,100%{
+
+        transform:translateY(0) rotate(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-20px) rotate(8deg);
+
+    }
+
+}
+
+
+/* =========================================================
    MUSIC
-========================= */
+========================================================= */
 
 .music-btn{
+
     position:fixed;
+
     right:20px;
+
     top:20px;
+
     width:48px;
+
     height:48px;
+
     border-radius:50%;
-    border:1px solid rgba(112,70,84,.2);
-    background:rgba(255,255,255,.65);
+
+    border:1px solid rgba(100,70,40,.2);
+
+    background:rgba(255,250,240,.75);
+
     backdrop-filter:blur(15px);
-    color:#704654;
-    z-index:100;
+
+    color:#705033;
+
+    z-index:500;
+
     cursor:pointer;
+
     font-size:17px;
-    box-shadow:0 8px 25px rgba(90,40,60,.08);
+
+    box-shadow:
+
+        0 10px 30px rgba(80,50,20,.1);
+
 }
 
-/* =========================
+
+/* =========================================================
    GENERAL
-========================= */
+========================================================= */
 
 section{
+
     min-height:100vh;
-    padding:100px 7%;
+
+    padding:110px 7%;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
 }
+
 
 .container{
+
     width:100%;
+
     max-width:1050px;
+
     margin:auto;
+
 }
+
 
 .serif{
+
     font-family:'Cormorant Garamond',serif;
+
 }
+
 
 .fade{
+
     opacity:0;
-    transform:translateY(40px);
-    transition:1.2s ease;
+
+    transform:translateY(45px);
+
+    transition:
+
+        opacity 1.2s ease,
+
+        transform 1.2s ease;
+
 }
+
 
 .fade.show{
+
     opacity:1;
+
     transform:translateY(0);
+
 }
 
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    position:relative;
-    overflow:hidden;
-    text-align:center;
-    background:
-        radial-gradient(circle at 50% 40%,#ffdce7,transparent 35%),
-        #fdf5f7;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-}
 
 .small{
-    font-size:11px;
+
+    font-size:10px;
+
     letter-spacing:4px;
+
     text-transform:uppercase;
-    color:#a06d7d;
+
+    color:#a47b48;
+
     margin-bottom:25px;
+
 }
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    text-align:center;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 42%,
+            #ffe7a9 0%,
+            transparent 35%
+        ),
+
+        var(--cream);
+
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
 
 .hero h1{
+
     font-family:'Cormorant Garamond',serif;
-    font-size:clamp(65px,12vw,135px);
-    line-height:.82;
+
+    font-size:clamp(70px,13vw,145px);
+
+    line-height:.78;
+
     font-weight:400;
-    color:#704654;
+
+    color:var(--brown);
+
 }
+
 
 .hero h1 span{
+
     display:block;
+
     font-style:italic;
+
 }
+
 
 .hero p{
-    max-width:550px;
-    margin:35px auto 0;
-    color:#96707c;
-    line-height:1.8;
+
+    max-width:600px;
+
+    margin:40px auto 0;
+
     font-size:14px;
-}
 
-/* =========================
-   INTRO
-========================= */
-
-.intro{
-    background:#f8e8ed;
-    text-align:center;
-}
-
-.intro h2{
-    font-size:clamp(48px,8vw,85px);
-    line-height:.9;
-    font-weight:400;
-    color:#704654;
-}
-
-.intro p{
-    max-width:650px;
-    margin:35px auto 0;
     line-height:1.9;
-    color:#8e6875;
-    font-size:15px;
+
+    color:#96775a;
+
 }
 
-/* =========================
-   PHOTO
-========================= */
+
+/* =========================================================
+   OCTOBER
+========================================================= */
+
+.october{
+
+    background:#f6e4c4;
+
+    text-align:center;
+
+}
+
+
+.october h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(65px,10vw,110px);
+
+    line-height:.8;
+
+    font-weight:400;
+
+    color:#68462c;
+
+}
+
+
+.october h2 span{
+
+    font-style:italic;
+
+}
+
+
+.october p{
+
+    max-width:650px;
+
+    margin:40px auto 0;
+
+    font-size:15px;
+
+    line-height:2;
+
+    color:#86694c;
+
+}
+
+
+.date{
+
+    margin-top:35px;
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    color:#a17945;
+
+}
+
+
+/* =========================================================
+   SUNFLOWER SECTION
+========================================================= */
+
+.sunflower-section{
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            #ffe9aa,
+            #fff8ef 50%
+        );
+
+    text-align:center;
+
+}
+
+
+.flower-big{
+
+    font-size:120px;
+
+    display:block;
+
+    animation:flowerPulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes flowerPulse{
+
+    0%,100%{
+
+        transform:scale(1) rotate(-2deg);
+
+    }
+
+    50%{
+
+        transform:scale(1.08) rotate(2deg);
+
+    }
+
+}
+
+
+.sunflower-section h2{
+
+    margin-top:25px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(50px,8vw,90px);
+
+    font-weight:400;
+
+    color:#68462c;
+
+}
+
+
+.sunflower-section p{
+
+    max-width:600px;
+
+    margin:25px auto 0;
+
+    line-height:1.9;
+
+    color:#927251;
+
+}
+
+
+/* =========================================================
+   MAIN PHOTO
+========================================================= */
 
 .photo-section{
-    background:#fdf5f7;
+
+    background:#fff8ef;
+
 }
+
 
 .photo{
+
     max-width:720px;
+
     margin:auto;
+
+}
+
+
+.photo-frame{
+
     position:relative;
+
+    padding:14px;
+
+    background:#fff;
+
+    box-shadow:
+
+        0 30px 80px rgba(100,65,25,.14);
+
 }
 
-.photo img{
+
+.photo-frame img{
+
     width:100%;
-    display:block;
+
     aspect-ratio:4/5;
+
     object-fit:cover;
-    border-radius:4px;
-    box-shadow:0 25px 70px rgba(100,50,70,.16);
-    animation:photoFloat 6s ease-in-out infinite;
+
+    display:block;
+
 }
 
-@keyframes photoFloat{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-8px)}
-}
 
 .photo-caption{
+
     display:flex;
+
     justify-content:space-between;
-    margin-top:22px;
+
+    margin-top:24px;
+
     font-size:10px;
+
     letter-spacing:3px;
-    color:#a47784;
+
+    color:#a37c4b;
+
 }
 
-/* =========================
+
+/* =========================================================
+   MEMORY TEXT
+========================================================= */
+
+.memory{
+
+    background:#f8ead4;
+
+    text-align:center;
+
+}
+
+
+.memory h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(55px,9vw,95px);
+
+    line-height:.85;
+
+    font-weight:400;
+
+    color:#68462c;
+
+}
+
+
+.memory h2 span{
+
+    font-style:italic;
+
+}
+
+
+.memory p{
+
+    max-width:670px;
+
+    margin:40px auto 0;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:27px;
+
+    line-height:1.55;
+
+    color:#76583e;
+
+}
+
+
+/* =========================================================
    GALLERY
-========================= */
+========================================================= */
 
 .gallery{
-    background:#f9e9ee;
+
+    background:#fff8ef;
+
 }
+
 
 .gallery-title{
+
     text-align:center;
-    margin-bottom:55px;
+
+    margin-bottom:60px;
+
 }
+
 
 .gallery h2{
-    font-size:clamp(50px,8vw,80px);
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(55px,9vw,95px);
+
+    line-height:.85;
+
     font-weight:400;
-    line-height:.9;
-    color:#704654;
+
+    color:#68462c;
+
 }
+
 
 .gallery-grid{
+
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
-    gap:18px;
+
+    gap:20px;
+
 }
+
 
 .gallery-card{
+
     overflow:hidden;
-    border-radius:3px;
-    box-shadow:0 15px 40px rgba(100,50,70,.1);
+
+    background:white;
+
+    padding:8px;
+
+    box-shadow:
+
+        0 15px 45px rgba(100,60,20,.1);
+
 }
+
 
 .gallery-card img{
+
     width:100%;
-    height:430px;
-    display:block;
+
+    height:450px;
+
     object-fit:cover;
-    transition:1s ease;
+
+    display:block;
+
+    transition:1.2s ease;
+
 }
+
 
 .gallery-card:hover img{
-    transform:scale(1.05);
+
+    transform:scale(1.06);
+
 }
+
 
 .gallery-card:nth-child(2){
-    margin-top:70px;
+
+    margin-top:80px;
+
 }
+
 
 .gallery-card:nth-child(3){
-    margin-top:-40px;
+
+    margin-top:-45px;
+
 }
 
-/* =========================
+
+/* =========================================================
    LETTER
-========================= */
+========================================================= */
 
 .letter{
-    background:#fdf5f7;
+
+    background:#f6e4c4;
+
 }
+
 
 .letter-card{
-    max-width:720px;
+
+    max-width:750px;
+
     margin:auto;
+
 }
+
 
 .letter-label{
+
     font-size:10px;
+
     letter-spacing:4px;
-    color:#a47784;
+
+    color:#a17945;
+
     margin-bottom:30px;
+
 }
+
 
 .letter h2{
-    font-size:clamp(55px,8vw,80px);
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(60px,9vw,90px);
+
     font-weight:400;
-    color:#704654;
+
+    color:#68462c;
+
     margin-bottom:45px;
+
 }
+
 
 .letter p{
+
     font-family:'Cormorant Garamond',serif;
-    font-size:clamp(23px,3vw,29px);
+
+    font-size:clamp(23px,3vw,30px);
+
     line-height:1.55;
-    color:#694953;
+
+    color:#6f5239;
+
 }
+
 
 .signature{
-    margin-top:45px;
+
+    margin-top:50px;
+
     font-family:'Cormorant Garamond',serif;
-    font-size:30px;
+
+    font-size:32px;
+
     font-style:italic;
-    color:#704654;
+
+    color:#68462c;
+
 }
 
-/* =========================
+
+/* =========================================================
    AGE
-========================= */
+========================================================= */
 
 .age{
+
     text-align:center;
+
     background:
-        radial-gradient(circle at 50% 45%,#ffdce7,transparent 35%),
-        #f8e8ed;
+
+        radial-gradient(
+            circle,
+            #ffe7a4,
+            #f5ddb6 45%,
+            #edd09d
+        );
+
 }
+
 
 .age-label{
+
     font-size:11px;
+
     letter-spacing:6px;
-    color:#a06d7d;
+
+    color:#9b713b;
+
 }
+
 
 .age-number{
+
     font-family:'Cormorant Garamond',serif;
-    font-size:clamp(170px,32vw,350px);
-    line-height:.72;
+
+    font-size:clamp(180px,35vw,370px);
+
+    line-height:.7;
+
     font-weight:400;
-    color:#704654;
-    text-shadow:0 20px 50px rgba(100,50,70,.12);
+
+    color:#68462c;
+
+    text-shadow:
+
+        0 20px 60px rgba(100,60,20,.12);
+
 }
+
 
 .age-text{
-    margin-top:45px;
+
+    margin-top:50px;
+
     font-family:'Cormorant Garamond',serif;
-    font-size:30px;
-    color:#805866;
+
+    font-size:32px;
+
+    color:#76573b;
+
 }
 
-/* =========================
+
+/* =========================================================
+   WISHES
+========================================================= */
+
+.wishes{
+
+    background:#fff8ef;
+
+    text-align:center;
+
+}
+
+
+.wishes h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(55px,8vw,90px);
+
+    font-weight:400;
+
+    color:#68462c;
+
+}
+
+
+.wishes p{
+
+    max-width:650px;
+
+    margin:35px auto 0;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:27px;
+
+    line-height:1.6;
+
+    color:#795b40;
+
+}
+
+
+.wish-list{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:45px;
+
+}
+
+
+.wish{
+
+    padding:12px 20px;
+
+    border:1px solid rgba(140,100,50,.2);
+
+    border-radius:100px;
+
+    color:#967044;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =========================================================
    FINAL
-========================= */
+========================================================= */
 
 .final{
+
     min-height:100vh;
+
     text-align:center;
-    background:#704654;
+
     color:white;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            #9d713e,
+            #68462c 55%,
+            #523721
+        );
+
 }
+
 
 .final .small{
-    color:#f2cbd6;
+
+    color:#ead1a5;
+
 }
+
 
 .final h2{
+
     font-family:'Cormorant Garamond',serif;
-    font-size:clamp(60px,10vw,115px);
-    line-height:.85;
+
+    font-size:clamp(65px,11vw,130px);
+
+    line-height:.8;
+
     font-weight:400;
+
 }
+
 
 .final h2 span{
+
     font-style:italic;
+
 }
+
 
 .final p{
-    margin-top:35px;
-    color:#edcbd5;
+
+    margin-top:40px;
+
+    color:#e8d1aa;
+
     font-size:14px;
+
 }
 
-.final-heart{
-    margin-top:45px;
-    font-size:28px;
-    animation:pulse 1.8s ease-in-out infinite;
+
+.final-flower{
+
+    margin-top:50px;
+
+    font-size:45px;
+
+    animation:flowerPulse 3s ease-in-out infinite;
+
 }
 
-@keyframes pulse{
-    0%,100%{transform:scale(1)}
-    50%{transform:scale(1.25)}
+
+/* =========================================================
+   FLOATING PETALS
+========================================================= */
+
+.petal{
+
+    position:fixed;
+
+    top:-30px;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    opacity:.5;
+
+    animation:fall linear forwards;
+
 }
 
-/* =========================
+
+@keyframes fall{
+
+    0%{
+
+        transform:
+            translateY(-20px)
+            rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:.5;
+
+    }
+
+    100%{
+
+        transform:
+            translateY(110vh)
+            translateX(80px)
+            rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:700px){
 
     section{
-        padding:80px 22px;
+
+        padding:85px 22px;
+
     }
+
 
     .opening h1{
-        font-size:65px;
+
+        font-size:67px;
+
     }
+
 
     .hero h1{
-        font-size:70px;
+
+        font-size:72px;
+
     }
 
+
     .gallery-grid{
+
         grid-template-columns:1fr;
+
     }
+
 
     .gallery-card,
     .gallery-card:nth-child(2),
     .gallery-card:nth-child(3){
+
         margin:0;
+
     }
+
 
     .gallery-card img{
-        height:420px;
+
+        height:430px;
+
     }
 
-    .letter p{
+
+    .memory p{
+
         font-size:24px;
+
+    }
+
+
+    .letter p{
+
+        font-size:24px;
+
+    }
+
+
+    .sunflower{
+
+        font-size:50px;
+
     }
 
 }
@@ -509,24 +1277,44 @@ section{
 
 <body>
 
-<!-- OPENING -->
+<!-- =====================================================
+     OPENING
+===================================================== -->
 
 <div class="opening" id="opening">
 
 ```
+<div class="sunflower one">🌻</div>
+
+<div class="sunflower two">🌻</div>
+
+<div class="sunflower three">🌻</div>
+
+
 <div class="opening-content">
 
     <div class="opening-small">
-        A little surprise for you
+        A little birthday surprise
     </div>
 
     <h1>
+
         Happy Birthday,
+
         <span>My Girl.</span>
+
     </h1>
 
-    <button class="open-button" onclick="openGift()">
+    <div class="opening-note">
+        Made especially for you ♡
+    </div>
+
+    <button
+        class="open-button"
+        onclick="openGift()">
+
         CLICK TO OPEN ♡
+
     </button>
 
 </div>
@@ -534,64 +1322,146 @@ section{
 
 </div>
 
-<!-- MUSIC -->
+<!-- =====================================================
+     MUSIC
+===================================================== -->
 
-<button class="music-btn" id="musicButton" onclick="toggleMusic()">
-    ♫
+<button
+ class="music-btn"
+ id="musicButton"
+ onclick="toggleMusic()">
+
+```
+♫
+```
+
 </button>
 
 <audio id="music" loop>
-    <source src="musik.mp3" type="audio/mpeg">
+
+```
+<source
+    src="musik.mp3"
+    type="audio/mpeg">
+```
+
 </audio>
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
 ```
-<div class="hero-content fade">
+<div class="sunflower one">🌻</div>
 
-    <div class="small">
-        September • A special day
+<div class="sunflower two">🌻</div>
+
+
+<div class="container">
+
+    <div class="hero-content fade">
+
+        <div class="small">
+            October • Your special month
+        </div>
+
+        <h1>
+
+            Happy Birthday,
+
+            <span>My Girl.</span>
+
+        </h1>
+
+        <p>
+
+            Ada satu bulan yang selalu terasa sedikit
+            lebih istimewa bagiku.
+
+            Bukan hanya karena datangnya musim baru,
+            tapi karena di bulan ini seseorang yang begitu
+            berarti bagiku lahir ke dunia.
+
+        </p>
+
     </div>
-
-    <h1>
-        Happy Birthday,
-        <span>My Girl.</span>
-    </h1>
-
-    <p>
-        Today isn't just another day.
-        It's a little celebration of someone
-        who means so much to me.
-    </p>
 
 </div>
 ```
 
 </section>
 
-<!-- INTRO -->
+<!-- =====================================================
+     OCTOBER
+===================================================== -->
 
-<section class="intro">
+<section class="october">
 
 ```
 <div class="container fade">
 
     <div class="small">
-        Chapter 25
+        The month you were born
     </div>
 
-    <h2 class="serif">
-        25 looks<br>
-        beautiful on you.
+    <h2>
+
+        Hello,
+
+        <span>October.</span>
+
     </h2>
 
     <p>
-        Semoga perjalanan di usia baru ini
-        membawa lebih banyak kebahagiaan,
-        ketenangan, keberanian,
-        dan hal-hal indah yang kamu impikan.
+
+        Oktober datang membawa warna hangat,
+        seperti matahari sore dan bunga-bunga yang
+        selalu menghadap cahaya.
+
+        Dan entah kenapa, sejak mengenalmu,
+        Oktober juga punya arti yang berbeda bagiku.
+
+    </p>
+
+    <div class="date">
+        A MONTH WORTH CELEBRATING
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     SUNFLOWER
+===================================================== -->
+
+<section class="sunflower-section">
+
+```
+<div class="container fade">
+
+    <span class="flower-big">
+        🌻
+    </span>
+
+    <h2>
+        Like a sunflower,
+        <br>
+        always find your light.
+    </h2>
+
+    <p>
+
+        Semoga sayang selalu dikelilingi
+        hal-hal yang membuat hati hangat.
+
+        Semoga langkahmu selalu menemukan
+        arah yang baik, bahkan ketika perjalanan
+        tidak selalu mudah.
+
     </p>
 
 </div>
@@ -599,7 +1469,9 @@ section{
 
 </section>
 
-<!-- MAIN PHOTO -->
+<!-- =====================================================
+     PHOTO 1
+===================================================== -->
 
 <section class="photo-section">
 
@@ -608,11 +1480,24 @@ section{
 
     <div class="photo">
 
-        <img src="foto1.jpg" alt="Our favorite memory">
+        <div class="photo-frame">
+
+            <img
+                src="foto1.jpg"
+                alt="Our favorite memory">
+
+        </div>
 
         <div class="photo-caption">
-            <span>ONE OF MY FAVORITE MEMORIES</span>
-            <span>♡</span>
+
+            <span>
+                ONE OF MY FAVORITE MEMORIES
+            </span>
+
+            <span>
+                🌻
+            </span>
+
         </div>
 
     </div>
@@ -622,7 +1507,48 @@ section{
 
 </section>
 
-<!-- GALLERY -->
+<!-- =====================================================
+     MEMORY
+===================================================== -->
+
+<section class="memory">
+
+```
+<div class="container fade">
+
+    <div class="small">
+        A little thought
+    </div>
+
+    <h2>
+
+        Some moments
+
+        <span>stay.</span>
+
+    </h2>
+
+    <p>
+
+        Ada banyak hal dalam hidup yang mungkin
+        akan kita lupakan seiring waktu.
+
+        Tapi ada beberapa senyum,
+        percakapan,
+        perjalanan,
+        dan momen sederhana
+        yang ingin selalu aku ingat.
+
+    </p>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
 
 <section class="gallery">
 
@@ -632,32 +1558,58 @@ section{
     <div class="gallery-title fade">
 
         <div class="small">
-            Little memories
+            Our memories
         </div>
 
-        <h2 class="serif">
-            Moments I want<br>
-            to remember.
+        <h2>
+
+            Little pieces
+            <br>
+
+            <span class="serif">
+                of us.
+            </span>
+
         </h2>
 
     </div>
 
+
     <div class="gallery-grid">
 
         <div class="gallery-card fade">
-            <img src="foto2.jpg" alt="Memory">
+
+            <img
+                src="foto2.jpg"
+                alt="Memory">
+
         </div>
 
-        <div class="gallery-card fade">
-            <img src="foto3.jpg" alt="Memory">
-        </div>
 
         <div class="gallery-card fade">
-            <img src="foto4.jpg" alt="Memory">
+
+            <img
+                src="foto3.jpg"
+                alt="Memory">
+
         </div>
 
+
         <div class="gallery-card fade">
-            <img src="foto5.jpg" alt="Memory">
+
+            <img
+                src="foto4.jpg"
+                alt="Memory">
+
+        </div>
+
+
+        <div class="gallery-card fade">
+
+            <img
+                src="foto5.jpg"
+                alt="Memory">
+
         </div>
 
     </div>
@@ -667,7 +1619,9 @@ section{
 
 </section>
 
-<!-- LETTER -->
+<!-- =====================================================
+     LETTER
+===================================================== -->
 
 <section class="letter">
 
@@ -680,30 +1634,44 @@ section{
             A LETTER FOR YOU
         </div>
 
-        <h2 class="serif">
+        <h2>
             Dear Sayangku,
         </h2>
 
         <p>
+
             Happy birthday to the person who has brought
             so many colors into my life.
+
             <br><br>
+
             Aku mungkin tidak selalu pandai mengungkapkan
             semuanya dengan kata-kata, tapi aku ingin kamu tahu
             bahwa keberadaan sayang sangat berarti bagi aku.
+
             <br><br>
+
             Semoga di usia 25 ini sayang mendapatkan
             lebih banyak alasan untuk tersenyum,
             lebih banyak hal untuk dibanggakan,
             dan lebih banyak mimpi yang menjadi nyata.
+
             <br><br>
+
             And whatever happens next, I hope we get to make
             many more memories together.
+
         </p>
 
+
         <div class="signature">
-            With love,<br>
+
+            With love,
+
+            <br>
+
             Ali ♡
+
         </div>
 
     </div>
@@ -713,7 +1681,9 @@ section{
 
 </section>
 
-<!-- AGE -->
+<!-- =====================================================
+     AGE
+===================================================== -->
 
 <section class="age">
 
@@ -721,7 +1691,7 @@ section{
 <div class="container fade">
 
     <div class="age-label">
-        WELCOME TO
+        CHAPTER TWENTY FIVE
     </div>
 
     <div class="age-number">
@@ -729,7 +1699,11 @@ section{
     </div>
 
     <div class="age-text">
-        May this chapter be your most beautiful one yet.
+
+        Welcome to your
+        <br>
+        beautiful new chapter.
+
     </div>
 
 </div>
@@ -737,7 +1711,67 @@ section{
 
 </section>
 
-<!-- FINAL -->
+<!-- =====================================================
+     WISHES
+===================================================== -->
+
+<section class="wishes">
+
+```
+<div class="container fade">
+
+    <div class="small">
+        My wishes for you
+    </div>
+
+    <h2>
+        For your 25th.
+    </h2>
+
+    <p>
+
+        Semoga tahun ini membawa lebih banyak
+        kebahagiaan daripada kekhawatiran,
+        lebih banyak tawa daripada air mata,
+        dan lebih banyak alasan untuk bersyukur.
+
+        <br><br>
+
+        Semoga semua hal baik yang sedang kamu
+        perjuangkan perlahan menemukan jalannya
+        menuju kamu.
+
+    </p>
+
+
+    <div class="wish-list">
+
+        <div class="wish">
+            More happiness
+        </div>
+
+        <div class="wish">
+            More dreams
+        </div>
+
+        <div class="wish">
+            More laughter
+        </div>
+
+        <div class="wish">
+            More beautiful moments
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
 
 <section class="final">
 
@@ -749,16 +1783,24 @@ section{
     </div>
 
     <h2>
-        Happy Birthday,<br>
+
+        Happy Birthday,
+
+        <br>
+
         <span>My Girl.</span>
+
     </h2>
 
     <p>
-        Thank you for being part of my story.
+
+        May your days always find
+        a little bit of sunshine.
+
     </p>
 
-    <div class="final-heart">
-        ♡
+    <div class="final-flower">
+        🌻
     </div>
 
 </div>
@@ -768,42 +1810,45 @@ section{
 
 <script>
 
-/* =========================
-   OPEN WEBSITE + MUSIC
-========================= */
 
-const music = document.getElementById("music");
-const opening = document.getElementById("opening");
-const musicButton = document.getElementById("musicButton");
+/* =====================================================
+   OPEN GIFT
+===================================================== */
+
+const music =
+    document.getElementById("music");
+
+const opening =
+    document.getElementById("opening");
+
+const musicButton =
+    document.getElementById("musicButton");
+
 
 function openGift(){
 
     opening.classList.add("hide");
 
-    /*
-    Musik diputar ketika tombol ditekan.
-    Ini lebih kompatibel dengan browser HP
-    dibanding autoplay tanpa interaksi.
-    */
 
     music.play().then(()=>{
 
-        musicButton.innerHTML = "❚❚";
+        musicButton.innerHTML="❚❚";
 
     }).catch(()=>{
 
-        musicButton.innerHTML = "♫";
+        musicButton.innerHTML="♫";
 
     });
 
-    startHearts();
+
+    startPetals();
 
 }
 
 
-/* =========================
-   MUSIC BUTTON
-========================= */
+/* =====================================================
+   MUSIC
+===================================================== */
 
 function toggleMusic(){
 
@@ -811,24 +1856,27 @@ function toggleMusic(){
 
         music.play();
 
-        musicButton.innerHTML = "❚❚";
+        musicButton.innerHTML="❚❚";
 
-    }else{
+    }
+
+    else{
 
         music.pause();
 
-        musicButton.innerHTML = "♫";
+        musicButton.innerHTML="♫";
 
     }
 
 }
 
 
-/* =========================
-   SCROLL ANIMATION
-========================= */
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
 
-const observer = new IntersectionObserver(
+const observer =
+new IntersectionObserver(
 
     (entries)=>{
 
@@ -850,46 +1898,66 @@ const observer = new IntersectionObserver(
 
 );
 
-document.querySelectorAll(".fade").forEach(el=>{
+
+document
+.querySelectorAll(".fade")
+.forEach(el=>{
+
     observer.observe(el);
+
 });
 
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* =====================================================
+   FLOATING PETALS
+===================================================== */
 
-function createHeart(){
+function createPetal(){
 
-    const heart = document.createElement("div");
+    const petal =
+    document.createElement("div");
 
-    heart.className = "heart";
+    petal.className="petal";
 
-    heart.innerHTML = Math.random() > .5 ? "♡" : "♥";
+    petal.innerHTML =
+        Math.random() > .5
+        ? "🌼"
+        : "🌻";
 
-    heart.style.left = Math.random() * 100 + "vw";
 
-    heart.style.fontSize =
-        (12 + Math.random() * 15) + "px";
+    petal.style.left =
+        Math.random()*100+"vw";
 
-    heart.style.animationDuration =
-        (5 + Math.random() * 4) + "s";
 
-    document.body.appendChild(heart);
+    petal.style.fontSize =
+        (10+Math.random()*15)+"px";
+
+
+    petal.style.animationDuration =
+        (6+Math.random()*5)+"s";
+
+
+    document.body.appendChild(petal);
+
 
     setTimeout(()=>{
-        heart.remove();
-    },9000);
+
+        petal.remove();
+
+    },11000);
 
 }
 
-function startHearts(){
 
-    setInterval(createHeart,900);
+function startPetals(){
+
+    setInterval(createPetal,1200);
 
 }
+
 
 </script>
 
 </body>
+
 </html>
