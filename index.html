@@ -1273,6 +1273,124 @@ section{
 
 </style>
 
+
+<style id="sunflower-bloom-style">
+/* Sunflower bloom transition — does not alter the existing design */
+#sunflowerBloom{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    pointer-events:none;
+    opacity:0;
+    visibility:hidden;
+    background:rgba(255,248,239,0);
+    transition:opacity .45s ease, background 1.1s ease, visibility 0s linear 1.8s;
+}
+#sunflowerBloom.active{
+    opacity:1;
+    visibility:visible;
+    background:rgba(255,248,239,.96);
+    transition:opacity .35s ease, background 1s ease, visibility 0s;
+}
+#sunflowerBloom .bloom-flower{
+    position:relative;
+    width:min(72vw,330px);
+    aspect-ratio:1;
+    transform:scale(.05) rotate(-8deg);
+    opacity:0;
+    filter:drop-shadow(0 16px 22px rgba(101,72,49,.14));
+}
+#sunflowerBloom.active .bloom-flower{
+    animation:bloomFlower 1.7s cubic-bezier(.2,.8,.2,1) forwards;
+}
+#sunflowerBloom .petals{
+    position:absolute;
+    inset:0;
+    transform:rotate(-7deg);
+}
+#sunflowerBloom .bloom-petal{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:17%;
+    height:43%;
+    transform-origin:50% 100%;
+    border-radius:55% 55% 45% 45% / 72% 72% 28% 28%;
+    background:linear-gradient(180deg,#f8d878 0%,#e9b83f 58%,#c98a24 100%);
+    box-shadow:inset 0 1px 3px rgba(255,255,255,.45),0 2px 8px rgba(139,91,25,.10);
+    opacity:0;
+    transform:translate(-50%,-100%) rotate(var(--r)) scale(.05);
+}
+#sunflowerBloom.active .bloom-petal{
+    animation:petalBloom .78s cubic-bezier(.18,.85,.2,1) forwards;
+    animation-delay:var(--d);
+}
+#sunflowerBloom .bloom-center{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:28%;
+    aspect-ratio:1;
+    transform:translate(-50%,-50%) scale(.05);
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 35% 30%,#8b6330 0 4%,transparent 5%),
+        radial-gradient(circle at 67% 32%,#704923 0 4%,transparent 5%),
+        radial-gradient(circle at 32% 67%,#704923 0 4%,transparent 5%),
+        radial-gradient(circle at 68% 68%,#8b6330 0 4%,transparent 5%),
+        radial-gradient(circle,#6b4725 0%,#4d311d 72%,#3d2718 100%);
+    box-shadow:inset 0 3px 5px rgba(255,224,154,.18),0 4px 12px rgba(75,45,20,.22);
+    opacity:0;
+}
+#sunflowerBloom.active .bloom-center{
+    animation:centerBloom .65s cubic-bezier(.2,.9,.2,1) 1.05s forwards;
+}
+#sunflowerBloom .bloom-glow{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:70%;
+    aspect-ratio:1;
+    transform:translate(-50%,-50%) scale(.2);
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(246,202,102,.34) 0%,rgba(246,202,102,.13) 35%,transparent 70%);
+    opacity:0;
+}
+#sunflowerBloom.active .bloom-glow{
+    animation:glowBloom 1.5s ease-out .15s forwards;
+}
+@keyframes bloomFlower{
+    0%{transform:scale(.05) rotate(-8deg);opacity:0}
+    35%{opacity:1}
+    100%{transform:scale(1) rotate(0);opacity:1}
+}
+@keyframes petalBloom{
+    0%{opacity:0;transform:translate(-50%,-100%) rotate(var(--r)) scale(.05)}
+    55%{opacity:1}
+    100%{opacity:1;transform:translate(-50%,-100%) rotate(var(--r)) scale(1)}
+}
+@keyframes centerBloom{
+    0%{opacity:0;transform:translate(-50%,-50%) scale(.05)}
+    70%{opacity:1}
+    100%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+}
+@keyframes glowBloom{
+    0%{opacity:0;transform:translate(-50%,-50%) scale(.2)}
+    45%{opacity:1}
+    100%{opacity:.7;transform:translate(-50%,-50%) scale(1.2)}
+}
+@media (prefers-reduced-motion:reduce){
+    #sunflowerBloom,#sunflowerBloom *{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.01ms!important;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -1283,7 +1401,6 @@ section{
 
 <div class="opening" id="opening">
 
-```
 <div class="sunflower one">🌻</div>
 
 <div class="sunflower two">🌻</div>
@@ -1318,7 +1435,6 @@ section{
     </button>
 
 </div>
-```
 
 </div>
 
@@ -1331,19 +1447,15 @@ section{
  id="musicButton"
  onclick="toggleMusic()">
 
-```
 ♫
-```
 
 </button>
 
 <audio id="music" loop>
 
-```
 <source
     src="musik.mp3"
     type="audio/mpeg">
-```
 
 </audio>
 
@@ -1353,7 +1465,6 @@ section{
 
 <section class="hero">
 
-```
 <div class="sunflower one">🌻</div>
 
 <div class="sunflower two">🌻</div>
@@ -1389,7 +1500,6 @@ section{
     </div>
 
 </div>
-```
 
 </section>
 
@@ -1399,7 +1509,6 @@ section{
 
 <section class="october">
 
-```
 <div class="container fade">
 
     <div class="small">
@@ -1430,7 +1539,6 @@ section{
     </div>
 
 </div>
-```
 
 </section>
 
@@ -1440,7 +1548,6 @@ section{
 
 <section class="sunflower-section">
 
-```
 <div class="container fade">
 
     <span class="flower-big">
@@ -1465,7 +1572,6 @@ section{
     </p>
 
 </div>
-```
 
 </section>
 
@@ -1475,7 +1581,6 @@ section{
 
 <section class="photo-section">
 
-```
 <div class="container fade">
 
     <div class="photo">
@@ -1503,7 +1608,6 @@ section{
     </div>
 
 </div>
-```
 
 </section>
 
@@ -1513,7 +1617,6 @@ section{
 
 <section class="memory">
 
-```
 <div class="container fade">
 
     <div class="small">
@@ -1542,7 +1645,6 @@ section{
     </p>
 
 </div>
-```
 
 </section>
 
@@ -1552,7 +1654,6 @@ section{
 
 <section class="gallery">
 
-```
 <div class="container">
 
     <div class="gallery-title fade">
@@ -1615,7 +1716,6 @@ section{
     </div>
 
 </div>
-```
 
 </section>
 
@@ -1625,7 +1725,6 @@ section{
 
 <section class="letter">
 
-```
 <div class="container">
 
     <div class="letter-card fade">
@@ -1677,7 +1776,6 @@ section{
     </div>
 
 </div>
-```
 
 </section>
 
@@ -1687,7 +1785,6 @@ section{
 
 <section class="age">
 
-```
 <div class="container fade">
 
     <div class="age-label">
@@ -1707,7 +1804,6 @@ section{
     </div>
 
 </div>
-```
 
 </section>
 
@@ -1717,7 +1813,6 @@ section{
 
 <section class="wishes">
 
-```
 <div class="container fade">
 
     <div class="small">
@@ -1765,7 +1860,6 @@ section{
     </div>
 
 </div>
-```
 
 </section>
 
@@ -1775,7 +1869,6 @@ section{
 
 <section class="final">
 
-```
 <div class="container fade">
 
     <div class="small">
@@ -1804,7 +1897,6 @@ section{
     </div>
 
 </div>
-```
 
 </section>
 
@@ -1827,8 +1919,22 @@ const musicButton =
 
 function openGift(){
 
+    const bloom =
+        document.getElementById("sunflowerBloom");
+
     opening.classList.add("hide");
 
+    if(bloom){
+
+        bloom.classList.add("active");
+
+        setTimeout(()=>{
+
+            bloom.classList.remove("active");
+
+        },2500);
+
+    }
 
     music.play().then(()=>{
 
@@ -1839,7 +1945,6 @@ function openGift(){
         musicButton.innerHTML="♫";
 
     });
-
 
     startPetals();
 
@@ -1957,6 +2062,29 @@ function startPetals(){
 
 
 </script>
+
+
+<!-- Sunflower bloom transition -->
+<div id="sunflowerBloom" aria-hidden="true">
+    <div class="bloom-flower">
+        <div class="bloom-glow"></div>
+        <div class="petals">
+            <span class="bloom-petal" style="--r:0deg;--d:.10s"></span>
+            <span class="bloom-petal" style="--r:30deg;--d:.16s"></span>
+            <span class="bloom-petal" style="--r:60deg;--d:.22s"></span>
+            <span class="bloom-petal" style="--r:90deg;--d:.28s"></span>
+            <span class="bloom-petal" style="--r:120deg;--d:.34s"></span>
+            <span class="bloom-petal" style="--r:150deg;--d:.40s"></span>
+            <span class="bloom-petal" style="--r:180deg;--d:.46s"></span>
+            <span class="bloom-petal" style="--r:210deg;--d:.52s"></span>
+            <span class="bloom-petal" style="--r:240deg;--d:.58s"></span>
+            <span class="bloom-petal" style="--r:270deg;--d:.64s"></span>
+            <span class="bloom-petal" style="--r:300deg;--d:.70s"></span>
+            <span class="bloom-petal" style="--r:330deg;--d:.76s"></span>
+        </div>
+        <div class="bloom-center"></div>
+    </div>
+</div>
 
 </body>
 
